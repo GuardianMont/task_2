@@ -13,6 +13,7 @@
  	<title>Geek Factory - Vendita</title>
     <link rel="stylesheet" href="./css/account.css">
     <link rel="icon" href="./img/icon.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self'; img-src 'self' data:;">
 </head>
 <body>
 	<div class="header">
@@ -27,7 +28,7 @@
 			<div class="user-details">
 				<div class="input-box">
 					<span class="details">Nome prodotto</span>
-					<input type="text" name="nome" maxlength="50" placeholder="Inserire nome prodotto" autofocus required/>
+					<input type="text" name="nome" maxlength="50" placeholder="Inserire nome prodotto" required pattern="[A-Za-z0-9\s]+" autofocus/>
 				</div>
 				<div class="input-box">
 					<span class="details">Prezzo</span>
@@ -60,7 +61,9 @@
 				</div>
 				<div class="input-box">
 					<span class="details">Descrizione</span>
-					<textarea id="descrizione" name="descrizione" rows="4" cols="60" style="resize: none; width: 450px; height: 80px" required></textarea> <!-- 93 -->
+					<textarea id="descrizione" name="descrizione" rows="4" cols="60" style="resize: none; width: 450px; height: 80px" required>
+				     	<c:out value="${sanitizedDescrizione}"/>
+					</textarea> <!-- 93 -->
 				</div>
 			</div>
 			<div class="button">

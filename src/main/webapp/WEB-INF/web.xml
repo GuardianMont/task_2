@@ -41,7 +41,8 @@
     <role-name>registeredUser</role-name>
   </security-role>
   
-  <error-page>
+  <!-- aggiunto per una corretta gestione degli errori -->
+    <error-page>
     <error-code>500</error-code>
     <location>/error.jsp</location>
   </error-page>
@@ -49,4 +50,16 @@
     <exception-type>java.lang.Throwable</exception-type>
     <location>/error.jsp</location>
   </error-page>
+  
+  
+  <!-- aggiunto per la gestione della vulnerabilità all'anti-clickjacking -->
+  <filter>
+        <filter-name>ClickjackingFilter</filter-name>
+        <filter-class>control.ClickjackingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ClickjackingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

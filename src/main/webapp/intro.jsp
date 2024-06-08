@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="./css/intro-style.css">
 	<link rel="icon" href="./img/icon.png">
 	
-	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-hash_value" crossorigin="anonymous"></script>
+    <!-- attuato un Subresource Integrity Hash Generator per assicurare l'affidabilità delle risorsa esterna -->
 </head>
 <body>
 
